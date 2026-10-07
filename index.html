@@ -31,7 +31,7 @@ h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.05;letter-sp
 h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-family:var(--mono);font-size:.95rem;color:var(--muted);max-width:580px;margin:0 auto 2.5rem;line-height:1.8}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:4rem}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.85rem 2rem;border-radius:6px;font-family:var(--mono);font-size:.85rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(99,102,241,.3)}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.85rem 2rem;border-radius:6px;font-family:var(--mono);font-size:.85rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(99,102,241,.3);border:0;cursor:pointer}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(99,102,241,.5)}
 .btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--text);padding:.85rem 2rem;border-radius:6px;font-family:var(--mono);font-size:.85rem;text-decoration:none;border:1px solid var(--border);transition:border-color .2s,background .2s}
 .btn-secondary:hover{border-color:var(--accent);background:var(--glow)}
@@ -40,7 +40,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .terminal-dot{width:10px;height:10px;border-radius:50%}
 .dot-r{background:#ef4444}.dot-y{background:#f59e0b}.dot-g{background:#10b981}
 .terminal-title{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:.5rem}
-.terminal-body{padding:1.25rem 1.5rem;font-family:var(--mono);font-size:.78rem;line-height:2}
+.terminal-body{padding:1.25rem 1.5rem;font-family:var(--mono);font-size:.78rem;line-height:2;text-align:left}
 .t-line{display:flex;gap:.75rem}
 .t-prompt{color:var(--accent)}.t-cmd{color:var(--text)}.t-out-ok{color:var(--green)}.t-out-warn{color:var(--amber)}.t-out-err{color:var(--red)}.t-out-dim{color:var(--muted)}
 .t-cursor{display:inline-block;width:8px;height:14px;background:var(--accent);animation:blink 1s infinite;vertical-align:middle}
@@ -59,6 +59,34 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .stat-box{background:var(--surface);padding:1.5rem;text-align:center}
 .stat-num{font-size:2rem;font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:.2rem}
 .stat-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+/* ---- Demo video ---- */
+.video-frame{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 0 60px rgba(99,102,241,.08)}
+.video-frame video{display:block;width:100%;height:auto;aspect-ratio:1366/634;background:#000}
+.video-caption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding:.85rem 1.25rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+
+/* ---- Contact form ---- */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:start}
+.contact-info p{font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1.25rem}
+.contact-info a{color:var(--accent);text-decoration:none}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted)}
+.field input,.field select,.field textarea{font-family:var(--mono);font-size:.82rem;color:var(--text);background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:.7rem .85rem;width:100%;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field select option{background:var(--surface)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.field .req{color:var(--accent)}
+.consent{display:flex;gap:.6rem;align-items:flex-start;font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:1.7}
+.consent input{margin-top:.25rem;accent-color:var(--accent)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-actions{grid-column:1/-1;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.form-actions .btn-primary:disabled{opacity:.6;cursor:wait}
+.form-status{font-family:var(--mono);font-size:.78rem;min-height:1.2em}
+.form-status.ok{color:var(--green)}.form-status.err{color:var(--red)}
+
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem 1.75rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .price-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-3px)}
@@ -86,7 +114,9 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 .footer-col a:hover{color:var(--text)}
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:.72rem;color:var(--muted);flex-wrap:wrap;gap:1rem}
 .full-divider{border:none;border-top:1px solid var(--border);width:100%}
-@media(max-width:768px){nav{padding:1rem}.nav-links{display:none}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.contact-wrap{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:1rem}.nav-links{display:none}.footer-grid{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr;padding:1.5rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -94,10 +124,11 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <nav>
   <div class="nav-logo">🛡️ <span>Neural</span>Sentinel</div>
   <ul class="nav-links">
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#solution">Solution</a></li>
     <li><a href="#partners">Partners</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="mailto:mohamed@neuralsentinel.online" class="nav-cta">Contact →</a></li>
+    <li><a href="#contact" class="nav-cta">Contact →</a></li>
   </ul>
 </nav>
 
@@ -108,8 +139,9 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <h1>Secure the <em>Sovereign AI</em><br>Frontier</h1>
     <p class="hero-sub">Continuous, air-gapped security scanning and ISO/IEC 42001 & EU AI Act compliance mapping for Agentic AI and RAG architectures.</p>
     <div class="hero-actions">
-      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" class="btn-primary">View GitHub Action →</a>
-      <a href="mailto:mohamed@neuralsentinel.online" class="btn-secondary">Request Partner Access</a>
+      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" rel="noopener" class="btn-primary">View GitHub Action →</a>
+      <a href="#demo" class="btn-secondary">Watch the demo</a>
+      <a href="#contact" class="btn-secondary">Request Partner Access</a>
     </div>
     <div class="hero-terminal">
       <div class="terminal-bar">
@@ -139,6 +171,21 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="stat-box"><span class="stat-num">EU</span><span class="stat-label">AI Act Ready</span></div>
   </div>
 </div>
+
+<hr class="full-divider">
+
+<section class="section" id="demo">
+  <div class="section-label">// live demo</div>
+  <h2 class="section-title">See a scan from start to finish</h2>
+  <p class="section-sub">Watch Neural Sentinel scan an AI agent configuration and map each finding to compliance evidence.</p>
+  <div class="video-frame">
+    <video controls playsinline preload="metadata" aria-label="Neural Sentinel scan demo">
+      <source src="Copilot_scan_.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="Copilot_scan_.mp4">Download the demo</a>.
+    </video>
+    <div class="video-caption"><span>Neural Sentinel scan walkthrough</span><span>1:44</span></div>
+  </div>
+</section>
 
 <hr class="full-divider">
 
@@ -182,7 +229,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <li>Native dashboard embedding</li>
         <li>Joint go-to-market support</li>
       </ul>
-      <a href="mailto:mohamed@neuralsentinel.online" class="price-btn">Discuss Integration →</a>
+      <a href="#contact" class="price-btn" data-interest="GRC platform integration">Discuss Integration →</a>
     </div>
     <div class="price-card featured">
       <div class="price-tier">MSSP / vCISO Reseller</div>
@@ -194,7 +241,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <li>Zero operational overhead</li>
         <li>Dedicated partner success manager</li>
       </ul>
-      <a href="mailto:mohamed@neuralsentinel.online" class="price-btn">Request NFR Keys →</a>
+      <a href="#contact" class="price-btn" data-interest="MSSP / vCISO reseller">Request NFR Keys →</a>
     </div>
     <div class="price-card">
       <div class="price-tier">Enterprise Direct</div>
@@ -206,12 +253,63 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <li>Custom compliance frameworks</li>
         <li>On-premise deployment assistance</li>
       </ul>
-      <a href="mailto:mohamed@neuralsentinel.online" class="price-btn">Contact Sales →</a>
+      <a href="#contact" class="price-btn" data-interest="Enterprise direct">Contact Sales →</a>
     </div>
   </div>
   <div class="enterprise-note">
     💼 <strong>Ready to validate?</strong> We provide Not-For-Resale (NFR) partner license keys for your internal lab testing and technical validation.<br>
-    <a href="mailto:mohamed@neuralsentinel.online">Request NFR Access: mohamed@neuralsentinel.online →</a>
+    <a href="#contact" data-interest="NFR keys">Request NFR Access →</a>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<section class="section" id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="section-label">// contact</div>
+      <h2 class="section-title">Request partner access</h2>
+      <p>Tell us about your team and what you want to validate. We reply with NFR license keys and next steps.</p>
+      <p>Prefer email? <a href="mailto:mohamed@neuralsentinel.online">mohamed@neuralsentinel.online</a><br>Phone: +216 92 405 165</p>
+    </div>
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="field">
+        <label for="f-name">Full name <span class="req">*</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Work email <span class="req">*</span></label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-company">Company <span class="req">*</span></label>
+        <input id="f-company" name="company" type="text" autocomplete="organization" required>
+      </div>
+      <div class="field">
+        <label for="f-interest">I'm interested in</label>
+        <select id="f-interest" name="interest">
+          <option>NFR keys</option>
+          <option>GRC platform integration</option>
+          <option>MSSP / vCISO reseller</option>
+          <option>Enterprise direct</option>
+          <option>GitHub Action (open-source)</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="f-message">Message</label>
+        <textarea id="f-message" name="message" placeholder="What AI systems do you want to scan, and which frameworks do you need to map to?"></textarea>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="consent full field" style="flex-direction:row">
+        <input type="checkbox" id="f-consent" name="consent" required>
+        <span>I agree to be contacted about Neural Sentinel. See the <a href="#" onclick="openModal('privacy');return false" style="color:var(--accent)">Privacy Policy</a>.</span>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" id="f-submit">Send request</button>
+        <span class="form-status" id="f-status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -238,15 +336,16 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     </div>
     <div class="footer-col">
       <h4>Product</h4>
-      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank">GitHub Action</a>
+      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" rel="noopener">GitHub Action</a>
+      <a href="#demo">Demo video</a>
       <a href="#solution">Docker Appliance</a>
       <a href="#partners">Partner Program</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
-      <a href="mailto:mohamed@neuralsentinel.online">Contact</a>
-      <a href="#" onclick="openModal('privacy')">Privacy Policy</a>
-      <a href="#" onclick="openModal('terms')">Terms of Service</a>
+      <a href="#contact">Contact</a>
+      <a href="#" onclick="openModal('privacy');return false">Privacy Policy</a>
+      <a href="#" onclick="openModal('terms');return false">Terms of Service</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -266,7 +365,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <div class="modal-overlay" id="modal-privacy" onclick="closeModal('privacy')" style="display:none;position:fixed;inset:0;background:rgba(5,8,16,.9);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px)">
   <div class="modal-box" onclick="event.stopPropagation()" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;max-width:560px;width:90%">
     <h2>Privacy Policy</h2>
-    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1rem">We do not permanently store your system prompts, documents, or scan results. All processing in our Enterprise Appliance is real-time and air-gapped. We never sell or share your data.</p>
+    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1rem">We do not permanently store your system prompts, documents, or scan results. All processing in our Enterprise Appliance is real-time and air-gapped. We never sell or share your data. Details you submit through the contact form are used only to reply to your request.</p>
     <button class="modal-close" onclick="closeModal('privacy')" style="font-family:var(--mono);font-size:.78rem;padding:.6rem 1.5rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer">Close</button>
   </div>
 </div>
@@ -275,6 +374,50 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 function openModal(id){document.getElementById("modal-"+id).style.display="flex";document.body.style.overflow="hidden"}
 function closeModal(id){document.getElementById("modal-"+id).style.display="none";document.body.style.overflow=""}
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){document.querySelectorAll(".modal-overlay").forEach(function(m){m.style.display="none"});document.body.style.overflow=""}});
+
+/* ---- Contact form ----
+   Set FORM_ENDPOINT to a Formspree URL (https://formspree.io/f/yourid) or any
+   endpoint that accepts a JSON POST. If left empty, the form opens the visitor's
+   email app with the message pre-filled. */
+var FORM_ENDPOINT = "";
+var CONTACT_EMAIL = "mohamed@neuralsentinel.online";
+
+// Pre-select interest from partner buttons
+document.querySelectorAll("[data-interest]").forEach(function(el){
+  el.addEventListener("click",function(){
+    var sel=document.getElementById("f-interest"),v=el.getAttribute("data-interest");
+    for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===v){sel.selectedIndex=i;break}}
+  });
+});
+
+var form=document.getElementById("contact-form"),
+    statusEl=document.getElementById("f-status"),
+    submitBtn=document.getElementById("f-submit");
+
+function setStatus(msg,cls){statusEl.textContent=msg;statusEl.className="form-status "+(cls||"")}
+
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  var d=Object.fromEntries(new FormData(form).entries());
+  if(d.website){return} // honeypot
+  if(!d.name.trim()||!d.company.trim()){setStatus("Enter your name and company.","err");return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email||"")){setStatus("Enter a valid email address.","err");return}
+  if(!form.consent.checked){setStatus("Tick the consent box to continue.","err");return}
+
+  if(!FORM_ENDPOINT){
+    var subject=encodeURIComponent("Partner request: "+d.interest+" ("+d.company+")");
+    var body=encodeURIComponent("Name: "+d.name+"\nEmail: "+d.email+"\nCompany: "+d.company+"\nInterest: "+d.interest+"\n\n"+(d.message||""));
+    window.location.href="mailto:"+CONTACT_EMAIL+"?subject="+subject+"&body="+body;
+    setStatus("Opening your email app. Send the message to complete your request.","ok");
+    return;
+  }
+
+  submitBtn.disabled=true;setStatus("Sending…");
+  fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)})
+    .then(function(r){if(!r.ok)throw new Error();form.reset();setStatus("Request sent. We'll reply within one business day.","ok")})
+    .catch(function(){setStatus("Couldn't send. Email "+CONTACT_EMAIL+" directly.","err")})
+    .finally(function(){submitBtn.disabled=false});
+});
 </script>
 </body>
 </html>
