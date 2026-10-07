@@ -40,7 +40,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .terminal-dot{width:10px;height:10px;border-radius:50%}
 .dot-r{background:#ef4444}.dot-y{background:#f59e0b}.dot-g{background:#10b981}
 .terminal-title{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:.5rem}
-.terminal-body{padding:1.25rem 1.5rem;font-family:var(--mono);font-size:.78rem;line-height:2}
+.terminal-body{padding:1.25rem 1.5rem;font-family:var(--mono);font-size:.78rem;line-height:2;text-align:left}
 .t-line{display:flex;gap:.75rem}
 .t-prompt{color:var(--accent)}.t-cmd{color:var(--text)}.t-out-ok{color:var(--green)}.t-out-warn{color:var(--amber)}.t-out-err{color:var(--red)}.t-out-dim{color:var(--muted)}
 .t-cursor{display:inline-block;width:8px;height:14px;background:var(--accent);animation:blink 1s infinite;vertical-align:middle}
@@ -69,6 +69,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .price-features{list-style:none;margin-bottom:2rem;flex:1}
 .price-features li{font-family:var(--mono);font-size:.75rem;color:var(--muted);padding:.45rem 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:.6rem}
 .price-features li::before{content:"→";color:var(--accent);flex-shrink:0}
+.price-features code{font-family:var(--mono);color:var(--text)}
 .price-btn{display:block;text-align:center;padding:.7rem;border-radius:6px;font-family:var(--mono);font-size:.75rem;font-weight:500;text-decoration:none;border:1px solid var(--border);color:var(--text);background:transparent;cursor:pointer;transition:background .2s,border-color .2s}
 .price-btn:hover{background:var(--glow);border-color:var(--accent)}
 .price-card.featured .price-btn{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -86,9 +87,13 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 .footer-col a:hover{color:var(--text)}
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:.72rem;color:var(--muted);flex-wrap:wrap;gap:1rem}
 .full-divider{border:none;border-top:1px solid var(--border);width:100%}
+
+/* demo video */
 .video-section{padding:6rem 2rem;max-width:1100px;margin:0 auto;text-align:center}
-.video-container{position:relative;width:100%;max-width:800px;margin:3rem auto;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--surface);aspect-ratio:16/9}
-.video-container iframe{width:100%;height:100%;border:none}
+.video-container{width:100%;max-width:900px;margin:3rem auto 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:0 0 60px rgba(99,102,241,.08)}
+.video-container video{display:block;width:100%;height:auto;background:#000}
+
+/* contact form */
 .contact-form-section{padding:6rem 2rem;max-width:800px;margin:0 auto}
 .contact-form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:3rem}
 .form-group{margin-bottom:1.5rem}
@@ -96,13 +101,18 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 .form-input,.form-textarea,.form-select{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:.75rem;font-family:var(--mono);font-size:.85rem;color:var(--text);transition:border-color .2s}
 .form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:var(--accent)}
 .form-textarea{min-height:120px;resize:vertical}
+.form-select option{background:var(--surface)}
 .form-note{font-family:var(--mono);font-size:.7rem;color:var(--amber);margin-top:.5rem}
 .form-submit{width:100%;background:var(--accent);color:#fff;padding:.85rem;border:none;border-radius:6px;font-family:var(--mono);font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s,transform .2s}
 .form-submit:hover{background:var(--accent2);transform:translateY(-2px)}
+.form-submit:disabled{opacity:.6;cursor:wait;transform:none}
 .form-checkbox{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:1.5rem}
-.form-checkbox input[type="checkbox"]{margin-top:.2rem}
+.form-checkbox input[type="checkbox"]{margin-top:.2rem;accent-color:var(--accent)}
 .form-checkbox label{font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:1.6}
 .form-checkbox a{color:var(--accent);text-decoration:none}
+.form-status{font-family:var(--mono);font-size:.8rem;margin-top:1rem;min-height:1.2em;text-align:center}
+.form-status.ok{color:var(--green)}.form-status.err{color:var(--red)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media(max-width:768px){nav{padding:1rem}.nav-links{display:none}.footer-grid{grid-template-columns:1fr}.contact-form{padding:2rem 1.5rem}}
 </style>
 </head>
@@ -126,7 +136,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <h1>Secure the <em>Sovereign AI</em><br>Frontier</h1>
     <p class="hero-sub">Continuous, air-gapped security scanning and ISO/IEC 42001 & EU AI Act compliance mapping for Agentic AI and RAG architectures.</p>
     <div class="hero-actions">
-      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" class="btn-primary">View GitHub Action →</a>
+      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" rel="noopener" class="btn-primary">View GitHub Action →</a>
       <a href="#contact" class="btn-secondary">Request 35-Day Evaluation</a>
     </div>
     <div class="hero-terminal">
@@ -160,14 +170,15 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 
 <hr class="full-divider">
 
-<!-- NEW VIDEO SECTION -->
 <section class="video-section" id="demo">
   <div class="section-label">// live demo</div>
   <h2 class="section-title">See a Scan from Start to Finish</h2>
-  <p class="section-sub" style="margin:0 auto 3rem">Watch Neural Sentinel scan an AI agent configuration and map each finding to compliance evidence.</p>
+  <p class="section-sub" style="margin:0 auto">Watch Neural Sentinel scan an AI agent configuration and map each finding to compliance evidence.</p>
   <div class="video-container">
-    <!-- Replace this YouTube embed with your Loom or Vimeo link -->
-    <iframe src="Copilot_scan_.mp4" title="Neural Sentinel scan walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <video controls playsinline preload="metadata" aria-label="Neural Sentinel scan walkthrough">
+      <source src="demo.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="demo.mp4">Download the demo</a>.
+    </video>
   </div>
 </section>
 
@@ -208,12 +219,12 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
       <div class="price-amount" style="font-size:1.5rem">API & JSON</div>
       <div class="price-period">For GRC Platforms</div>
       <ul class="price-features">
-        <li>Automated `_merged.json` matrix ingestion</li>
+        <li>Automated <code>_merged.json</code> matrix ingestion</li>
         <li>Continuous ISO 42001 evidence generation</li>
         <li>Dedicated JSON schema documentation</li>
         <li>Direct engineering support channel</li>
       </ul>
-      <a href="#contact" class="price-btn">Discuss Integration →</a>
+      <a href="#contact" class="price-btn" data-interest="integration">Discuss Integration →</a>
     </div>
     <div class="price-card featured">
       <div class="price-tier">MSSP / vCISO Partner</div>
@@ -225,7 +236,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <li>5-file automated output (PDF, MD, JSON)</li>
         <li>Direct founder support & onboarding</li>
       </ul>
-      <a href="#contact" class="price-btn">Request 35-Day NFR Evaluation →</a>
+      <a href="#contact" class="price-btn" data-interest="nfr">Request 35-Day NFR Evaluation →</a>
     </div>
     <div class="price-card">
       <div class="price-tier">Enterprise / VAR Bundle</div>
@@ -237,40 +248,39 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <li>Standard email support & updates</li>
         <li>Commercial distribution rights</li>
       </ul>
-      <a href="#contact" class="price-btn">Contact Sales →</a>
+      <a href="#contact" class="price-btn" data-interest="enterprise">Contact Sales →</a>
     </div>
   </div>
   <div class="enterprise-note">
     💼 <strong>Ready to validate?</strong> We provide <strong>35-day</strong> Not-For-Resale (NFR) evaluation keys for internal lab testing and technical validation.<br>
-    <a href="#contact">Request 35-Day Access →</a>
+    <a href="#contact" data-interest="nfr">Request 35-Day Access →</a>
   </div>
 </section>
 
 <hr class="full-divider">
 
-<!-- NEW CONTACT FORM SECTION -->
 <section class="contact-form-section" id="contact">
   <div class="section-label">// get started</div>
   <h2 class="section-title">Request 35-Day Evaluation Access</h2>
   <p class="section-sub">Tell us about your team and what you want to validate. We manually review requests and reply with a 35-day NFR license key and next steps.</p>
-  
-  <form class="contact-form" id="contactForm">
+
+  <form class="contact-form" id="contactForm" novalidate>
     <div class="form-group">
       <label class="form-label" for="fullName">Full name *</label>
-      <input class="form-input" type="text" id="fullName" name="fullName" required>
+      <input class="form-input" type="text" id="fullName" name="fullName" autocomplete="name" required>
     </div>
-    
+
     <div class="form-group">
       <label class="form-label" for="workEmail">Work email *</label>
-      <input class="form-input" type="email" id="workEmail" name="workEmail" placeholder="name@yourcompany.com" required>
+      <input class="form-input" type="email" id="workEmail" name="workEmail" autocomplete="email" placeholder="name@yourcompany.com" required>
       <p class="form-note">Use your company email address, not a personal one (gmail.com, yahoo.com)</p>
     </div>
-    
+
     <div class="form-group">
       <label class="form-label" for="company">Company *</label>
-      <input class="form-input" type="text" id="company" name="company" required>
+      <input class="form-input" type="text" id="company" name="company" autocomplete="organization" required>
     </div>
-    
+
     <div class="form-group">
       <label class="form-label" for="interest">I'm interested in</label>
       <select class="form-select" id="interest" name="interest">
@@ -280,18 +290,21 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <option value="enterprise">Enterprise Direct ($2,490/yr)</option>
       </select>
     </div>
-    
+
     <div class="form-group">
       <label class="form-label" for="message">What AI systems do you want to scan?</label>
       <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your AI infrastructure (RAG pipelines, agent workflows, etc.) and which compliance frameworks you need to map to..."></textarea>
     </div>
-    
+
+    <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+
     <div class="form-checkbox">
       <input type="checkbox" id="consent" name="consent" required>
       <label for="consent">I agree to be contacted about Neural Sentinel. See the <a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a>.</label>
     </div>
-    
-    <button type="submit" class="form-submit">Send Request →</button>
+
+    <button type="submit" class="form-submit" id="submitBtn">Send Request →</button>
+    <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
   </form>
 </section>
 
@@ -318,15 +331,16 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     </div>
     <div class="footer-col">
       <h4>Product</h4>
-      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank">GitHub Action</a>
+      <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" rel="noopener">GitHub Action</a>
+      <a href="#demo">Demo video</a>
       <a href="#solution">Docker Appliance</a>
       <a href="#partners">Partner Program</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="#contact">Contact</a>
-      <a href="#" onclick="openModal('privacy')">Privacy Policy</a>
-      <a href="#" onclick="openModal('terms')">Terms of Service</a>
+      <a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a>
+      <a href="#" onclick="openModal('terms'); return false;">Terms of Service</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -346,33 +360,77 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <div class="modal-overlay" id="modal-privacy" onclick="closeModal('privacy')" style="display:none;position:fixed;inset:0;background:rgba(5,8,16,.9);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px)">
   <div class="modal-box" onclick="event.stopPropagation()" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;max-width:560px;width:90%">
     <h2>Privacy Policy</h2>
-    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1rem">We do not permanently store your system prompts, documents, or scan results. All processing in our Enterprise Appliance is real-time and air-gapped. We never sell or share your data.</p>
+    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1rem">We do not permanently store your system prompts, documents, or scan results. All processing in our Enterprise Appliance is real-time and air-gapped. We never sell or share your data. Details you submit through the contact form are used only to reply to your request.</p>
     <button class="modal-close" onclick="closeModal('privacy')" style="font-family:var(--mono);font-size:.78rem;padding:.6rem 1.5rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer">Close</button>
   </div>
 </div>
 
 <script>
+/* ---------- Modals ---------- */
 function openModal(id){document.getElementById("modal-"+id).style.display="flex";document.body.style.overflow="hidden"}
 function closeModal(id){document.getElementById("modal-"+id).style.display="none";document.body.style.overflow=""}
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){document.querySelectorAll(".modal-overlay").forEach(function(m){m.style.display="none"});document.body.style.overflow=""}});
 
-// Form submission handler
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+/* ---------- Contact form: sends to your inbox via Web3Forms ---------- */
+var ACCESS_KEY = "d3b7660a-c901-47bc-b80f-c96e174b2ba4";
+var CONTACT_EMAIL = "mohamed@neuralsentinel.online";
+
+// Personal / free providers are rejected (business emails only)
+var FREE_DOMAINS = ("gmail.com googlemail.com yahoo.com yahoo.fr ymail.com rocketmail.com hotmail.com hotmail.fr " +
+  "outlook.com outlook.fr live.com live.fr msn.com icloud.com me.com mac.com aol.com proton.me protonmail.com pm.me " +
+  "gmx.com gmx.net mail.com zoho.com yandex.com yandex.ru mail.ru qq.com 163.com tutanota.com tuta.io fastmail.com " +
+  "hey.com inbox.com wanadoo.fr orange.fr free.fr laposte.net topnet.tn planet.tn gnet.tn").split(" ");
+
+var form = document.getElementById("contactForm"),
+    statusEl = document.getElementById("formStatus"),
+    submitBtn = document.getElementById("submitBtn");
+
+function setStatus(msg, cls){ statusEl.textContent = msg; statusEl.className = "form-status " + (cls || ""); }
+
+// Partner-card buttons pre-select the matching interest
+document.querySelectorAll("[data-interest]").forEach(function(el){
+  el.addEventListener("click", function(){ form.interest.value = el.dataset.interest; });
+});
+
+form.addEventListener("submit", function(e){
   e.preventDefault();
-  
-  const email = document.getElementById('workEmail').value;
-  const freeProviders = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'protonmail.com'];
-  const emailDomain = email.split('@')[1];
-  
-  if (freeProviders.includes(emailDomain)) {
-    alert('Please use your company email address, not a personal one (gmail.com, yahoo.com, etc.)');
-    return;
-  }
-  
-  // Here you would typically send the form data to your backend
-  // For now, we'll just show a success message
-  alert('Thank you! We\'ll review your request and send your 35-day evaluation key to ' + email + ' within 24 hours.');
-  this.reset();
+  var d = Object.fromEntries(new FormData(form).entries());
+  if (d.website) return; // honeypot
+
+  var email = (d.workEmail || "").trim().toLowerCase();
+  if (!d.fullName.trim() || !d.company.trim()) return setStatus("Enter your name and company.", "err");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setStatus("Enter a valid email address.", "err");
+  var domain = email.split("@")[1];
+  if (FREE_DOMAINS.indexOf(domain) !== -1) return setStatus("Use your company email address, not a personal one (" + domain + ").", "err");
+  if (!form.consent.checked) return setStatus("Tick the consent box to continue.", "err");
+
+  var interestText = form.interest.options[form.interest.selectedIndex].text;
+
+  submitBtn.disabled = true;
+  setStatus("Sending…");
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      access_key: ACCESS_KEY,
+      subject: "Neural Sentinel request: " + interestText + " (" + d.company + ")",
+      from_name: "Neural Sentinel website",
+      name: d.fullName,
+      email: email,
+      company: d.company,
+      interest: interestText,
+      message: d.message || "(none)",
+      replyto: email
+    })
+  })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if (!j.success) throw new Error(j.message);
+      form.reset();
+      setStatus("Request sent. We'll reply within 24 hours with your evaluation key.", "ok");
+    })
+    .catch(function(){ setStatus("Couldn't send. Email " + CONTACT_EMAIL + " directly.", "err"); })
+    .finally(function(){ submitBtn.disabled = false; });
 });
 </script>
 </body>
