@@ -93,6 +93,19 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 .video-container{width:100%;max-width:900px;margin:3rem auto 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:0 0 60px rgba(99,102,241,.08)}
 .video-container video{display:block;width:100%;height:auto;background:#000}
 
+
+/* five-file output */
+.output-list{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.output-row{display:grid;grid-template-columns:minmax(170px,1.1fr) 1.2fr 2fr;gap:1.5rem;align-items:center;background:var(--surface);padding:1.25rem 1.75rem;transition:background .2s}
+.output-row:hover{background:var(--surface2)}
+.output-file{font-family:var(--mono);font-size:.85rem;font-weight:500;color:var(--text)}
+.output-file::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--accent);margin-right:.7rem}
+.output-for{font-size:.9rem;font-weight:700}
+.output-desc{font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:1.7}
+.output-note{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:1.25rem;line-height:1.7}
+.output-note code{color:var(--text)}
+@media(max-width:768px){.output-row{grid-template-columns:1fr;gap:.35rem;padding:1.1rem 1.25rem}}
+
 /* contact form */
 .contact-form-section{padding:6rem 2rem;max-width:800px;margin:0 auto}
 .contact-form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:3rem}
@@ -123,6 +136,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <ul class="nav-links">
     <li><a href="#solution">Solution</a></li>
     <li><a href="#demo">Demo</a></li>
+    <li><a href="#output">Output</a></li>
     <li><a href="#partners">Partners</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Contact →</a></li>
@@ -184,6 +198,42 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 
 <hr class="full-divider">
 
+<section class="section" id="output">
+  <div class="section-label">// scan output</div>
+  <h2 class="section-title">Every scan generates five files</h2>
+  <p class="section-sub">One scan produces the right deliverable for each person who needs it, from the board to the build pipeline.</p>
+  <div class="output-list">
+    <div class="output-row">
+      <div class="output-file">_FINAL.pdf</div>
+      <div class="output-for">CISOs &amp; Boards</div>
+      <div class="output-desc">Executive summary of risk and compliance posture.</div>
+    </div>
+    <div class="output-row">
+      <div class="output-file">_report.md</div>
+      <div class="output-for">Developers</div>
+      <div class="output-desc">Actionable remediation steps for each finding.</div>
+    </div>
+    <div class="output-row">
+      <div class="output-file">_audit_matrix.md</div>
+      <div class="output-for">Auditors</div>
+      <div class="output-desc">Direct control mapping to ISO/IEC 42001 and EU AI Act.</div>
+    </div>
+    <div class="output-row">
+      <div class="output-file">_merged.json</div>
+      <div class="output-for">GRC platforms</div>
+      <div class="output-desc">Machine-readable data for GRC automation.</div>
+    </div>
+    <div class="output-row">
+      <div class="output-file">_manifest.json</div>
+      <div class="output-for">Proof of work</div>
+      <div class="output-desc">The AI tool schemas extracted during the scan.</div>
+    </div>
+  </div>
+  <p class="output-note">All five files are written inside your own environment. <code>_manifest.json</code> never leaves it.</p>
+</section>
+
+<hr class="full-divider">
+
 <section class="section" id="solution">
   <div class="section-label">// two-tiered architecture</div>
   <h2 class="section-title">Built for Developers.<br>Trusted by Auditors.</h2>
@@ -233,7 +283,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
       <ul class="price-features">
         <li>35-day full-feature NFR evaluation</li>
         <li>Unlimited air-gapped scans post-upgrade</li>
-        <li>5-file automated output (PDF, MD, JSON)</li>
+        <li>5-file output per scan (PDF, 2× Markdown, 2× JSON)</li>
         <li>Direct founder support & onboarding</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="nfr">Request 35-Day NFR Evaluation →</a>
@@ -423,13 +473,20 @@ form.addEventListener("submit", function(e){
       replyto: email
     })
   })
-    .then(function(r){ return r.json(); })
-    .then(function(j){
-      if (!j.success) throw new Error(j.message);
+    .then(function(r){
+      return r.json().then(function(j){ return { ok: r.ok, status: r.status, body: j }; },
+                           function(){ return { ok: false, status: r.status, body: {} }; });
+    })
+    .then(function(res){
+      console.log("Web3Forms response:", res.status, res.body);
+      if (!res.ok || !res.body.success) throw new Error(res.body.message || ("HTTP " + res.status));
       form.reset();
       setStatus("Request sent. We'll reply within 24 hours with your evaluation key.", "ok");
     })
-    .catch(function(){ setStatus("Couldn't send. Email " + CONTACT_EMAIL + " directly.", "err"); })
+    .catch(function(err){
+      console.error("Form error:", err);
+      setStatus("Couldn't send (" + err.message + "). Email " + CONTACT_EMAIL + " directly.", "err");
+    })
     .finally(function(){ submitBtn.disabled = false; });
 });
 </script>
