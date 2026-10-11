@@ -59,7 +59,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .stat-box{background:var(--surface);padding:1.5rem;text-align:center}
 .stat-num{font-size:2rem;font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:.2rem}
 .stat-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem 1.75rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .price-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-3px)}
 .price-card.featured{border-color:var(--accent);background:linear-gradient(145deg,rgba(99,102,241,.08),var(--surface));box-shadow:0 0 40px rgba(99,102,241,.12)}
@@ -159,7 +159,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <span class="terminal-title">github actions — neural-sentinel-scan.yml</span>
       </div>
       <div class="terminal-body">
-        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">Running Neural Sentinel v1.6...</span></div>
+        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">Running Neural Sentinel v1.8...</span></div>
         <div class="t-line"><span class="t-out-dim">→ Scanning agent configuration for structural vulnerabilities...</span></div>
         <div class="t-line"><span class="t-out-err">  [HIGH] CWE-269 — Unconstrained parameter detected in 'execute_tool' schema</span></div>
         <div class="t-line"><span class="t-out-dim">→ Mapping to ISO/IEC 27001 A.8.12 & ISO 42001 A.7.2...</span></div>
@@ -223,8 +223,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     </div>
     <div class="output-row">
       <div class="output-file">_merged.json</div>
-      <div class="output-for">GRC platforms</div>
-      <div class="output-desc">Machine-readable data for GRC automation.</div>
+      <div class="output-for">GRC platforms & SIEMs</div>
+      <div class="output-desc">Machine-readable, HMAC-SHA256 signed data for automated GRC ingestion (Webhook delivery unlocked in Enterprise/GRC tiers).</div>
     </div>
     <div class="output-row">
       <div class="output-file">_manifest.json</div>
@@ -250,7 +250,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="feat-card">
       <div class="feat-icon">🏢</div>
       <h3>Enterprise Docker Appliance</h3>
-      <p>A self-hosted, air-gapped container that performs deep semantic scanning of AI agents. Generates structured JSON compliance matrices and auditor-ready PDF reports. Zero data leaves the client's VPC.</p>
+      <p>A self-hosted, air-gapped container that performs deep semantic scanning of AI agents. Generates structured JSON compliance matrices and auditor-ready PDF reports. Includes optional HMAC-signed GRC Webhooks to auto-push evidence to Vanta, Drata, or Jira. Zero data leaves the client's VPC.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">⚖️</div>
@@ -268,40 +268,41 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <p class="section-sub">We do not compete with your services; we make them highly scalable and more profitable.</p>
   <div class="pricing-grid">
     <div class="price-card">
-      <div class="price-tier">Technology Integration</div>
-      <div class="price-amount" style="font-size:1.5rem">API & JSON</div>
-      <div class="price-period">For GRC Platforms</div>
+      <div class="price-tier">Founding Partner</div>
+      <div class="price-amount">$1,000</div>
+      <div class="price-period">/ year (Limited to first 5)</div>
       <ul class="price-features">
-        <li>Automated <code>_merged.json</code> matrix ingestion</li>
-        <li>Continuous ISO 42001 evidence generation</li>
-        <li>Dedicated JSON schema documentation</li>
-        <li>Direct engineering support channel</li>
-      </ul>
-      <a href="#contact" class="price-btn" data-interest="integration">Discuss Integration →</a>
-    </div>
-    <div class="price-card featured">
-      <div class="price-tier">MSSP / vCISO Partner</div>
-      <div class="price-amount">$990</div>
-      <div class="price-period">Founding Partner Rate (Limited to 5)</div>
-      <ul class="price-features">
-        <li>35-day full-feature NFR evaluation</li>
-        <li>Unlimited air-gapped scans post-upgrade</li>
-        <li>5-file output per scan (PDF, 2× Markdown, 2× JSON)</li>
+        <li>1-Year Commercial License</li>
+        <li>Unlimited air-gapped scans</li>
+        <li>5-file output per scan</li>
         <li>Direct founder support & onboarding</li>
+        <li>GRC Webhook Add-on available (+$500/yr)</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="nfr">Request 35-Day NFR Evaluation →</a>
     </div>
-    <div class="price-card">
-      <div class="price-tier">Enterprise / VAR Bundle</div>
-      <div class="price-amount">$2,490+</div>
-      <div class="price-period">Standard Commercial Licensing</div>
+    <div class="price-card featured">
+      <div class="price-tier">Enterprise License</div>
+      <div class="price-amount">$2,500</div>
+      <div class="price-period">/ year</div>
       <ul class="price-features">
         <li>Unlimited repositories & VPCs</li>
-        <li>VAR 5-Pack bundles available ($7,500)</li>
-        <li>Standard email support & updates</li>
-        <li>Commercial distribution rights</li>
+        <li>✅ INCLUDES: GRC Automation Add-on</li>
+        <li>Automated HMAC-signed webhook delivery to Vanta/Drata</li>
+        <li>Priority email support & container updates</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="enterprise">Contact Sales →</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">VAR / MSSP 5-Pack</div>
+      <div class="price-amount">$7,500</div>
+      <div class="price-period">/ year</div>
+      <ul class="price-features">
+        <li>5x Enterprise Licenses</li>
+        <li>Commercial redistribution rights</li>
+        <li>✅ INCLUDES: Multi-tenant GRC Webhook Routing</li>
+        <li>Bulk cryptographic license key generation</li>
+      </ul>
+      <a href="#contact" class="price-btn" data-interest="var">Contact Sales →</a>
     </div>
   </div>
   <div class="enterprise-note">
@@ -337,10 +338,11 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="form-group">
       <label class="form-label" for="interest">I'm interested in</label>
       <select class="form-select" id="interest" name="interest">
-        <option value="nfr">35-Day NFR Evaluation ($990/yr Founding Partner)</option>
-        <option value="var">VAR 5-Pack Bundle ($7,500)</option>
+        <option value="nfr">35-Day NFR Evaluation (Founding Partner)</option>
+        <option value="enterprise">Enterprise License ($2,500/yr, includes GRC Webhook)</option>
+        <option value="var">VAR / MSSP 5-Pack Bundle ($7,500/yr)</option>
+        <option value="grc_addon">GRC Automation Add-on (+$500/yr)</option>
         <option value="integration">GRC Platform Integration</option>
-        <option value="enterprise">Enterprise Direct ($2,490/yr)</option>
       </select>
     </div>
 
@@ -369,7 +371,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <div class="faq-list">
     <div class="faq-item"><h3>Does Neural Sentinel send our code or prompts to the cloud?</h3><p>Absolutely not. Our core differentiator is the Enterprise Docker Appliance, which is 100% air-gapped. It runs local inference within the client's own VPC or on-premise infrastructure. Zero data ever leaves your environment.</p></div>
     <div class="faq-item"><h3>How is this different from standard SAST tools?</h3><p>Standard SAST looks for generic code flaws. Neural Sentinel is purpose-built for AI architectures, detecting AI-native combinatorial kill-chains, prompt injection vectors, and mapping them directly to technical controls in frameworks like the EU AI Act, ISO/IEC 27001, and ISO/IEC 42001 that auditors require.</p></div>
-    <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br> Step 2: Once validated, we discuss Founding Partner pricing ($990/yr), VAR bundles ($7,500), or technical integration.</p></div>
+    <div class="faq-item"><h3>Can Neural Sentinel automatically push findings to our GRC platform (like Vanta or Drata)?</h3><p>Yes. Our Enterprise and VAR tiers include the <strong>GRC Automation Add-on</strong>. This enables a secure, HMAC-SHA256 signed webhook that automatically pushes the <code>_merged.json</code> compliance evidence directly to your GRC platform, SIEM, or ticketing system (like Jira). Because the scanner runs air-gapped, only the sanitized, signed JSON payload is transmitted—your source code and prompts never leave your environment.</p></div>
+    <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br> Step 2: Once validated, we discuss Founding Partner pricing ($1,000/yr), VAR bundles ($7,500), or technical integration.</p></div>
   </div>
 </section>
 
