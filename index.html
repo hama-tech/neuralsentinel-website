@@ -29,7 +29,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem}
 h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-family:var(--mono);font-size:.95rem;color:var(--muted);max-width:580px;margin:0 auto 2.5rem;line-height:1.8}
+.hero-sub{font-family:var(--mono);font-size:.95rem;color:var(--muted);max-width:640px;margin:0 auto 2.5rem;line-height:1.8}
 .hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:4rem}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.85rem 2rem;border-radius:6px;font-family:var(--mono);font-size:.85rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(99,102,241,.3)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(99,102,241,.5)}
@@ -92,7 +92,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 .video-section{padding:6rem 2rem;max-width:1100px;margin:0 auto;text-align:center}
 .video-container{width:100%;max-width:900px;margin:3rem auto 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:0 0 60px rgba(99,102,241,.08)}
 .video-container video{display:block;width:100%;height:auto;background:#000}
-
+.video-disclaimer{font-family:var(--mono);font-size:0.7rem;color:var(--muted);margin-top:1.5rem;max-width:800px;margin-left:auto;margin-right:auto;line-height:1.6;border-top:1px solid var(--border);padding-top:1rem;text-align:left}
 
 /* five-file output */
 .output-list{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
@@ -148,7 +148,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <div class="hero-content">
     <div class="hero-badge">AUTOMATED AI TRiSM & COMPLIANCE</div>
     <h1>Secure the <em>Sovereign AI</em><br>Frontier</h1>
-    <p class="hero-sub">Continuous, air-gapped security scanning and ISO/IEC 42001 & EU AI Act compliance mapping for Agentic AI and RAG architectures.</p>
+    <p class="hero-sub">Continuous, air-gapped security scanning and automated technical evidence mapping for ISO/IEC 27001, ISO/IEC 42001 & the EU AI Act.</p>
     <div class="hero-actions">
       <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" rel="noopener" class="btn-primary">View GitHub Action →</a>
       <a href="#contact" class="btn-secondary">Request 35-Day Evaluation</a>
@@ -159,10 +159,10 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <span class="terminal-title">github actions — neural-sentinel-scan.yml</span>
       </div>
       <div class="terminal-body">
-        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">Running Neural Sentinel v1.0...</span></div>
+        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">Running Neural Sentinel v1.6...</span></div>
         <div class="t-line"><span class="t-out-dim">→ Scanning agent configuration for structural vulnerabilities...</span></div>
         <div class="t-line"><span class="t-out-err">  [HIGH] CWE-269 — Unconstrained parameter detected in 'execute_tool' schema</span></div>
-        <div class="t-line"><span class="t-out-dim">→ Mapping to ISO/IEC 42001 Annex A.8.2 & EU AI Act Article 15...</span></div>
+        <div class="t-line"><span class="t-out-dim">→ Mapping to ISO/IEC 27001 A.8.12 & ISO 42001 A.7.2...</span></div>
         <div class="t-line"><span class="t-out-warn">  [COMPLIANCE] Missing required risk mitigation control.</span></div>
         <div class="t-line"><span class="t-out-dim">→ Action Failed: Blocking PR merge. Exit code 1.</span></div>
         <div class="t-line"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
@@ -177,7 +177,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <div class="stats-row">
     <div class="stat-box"><span class="stat-num">&lt;15s</span><span class="stat-label">Scan Time</span></div>
     <div class="stat-box"><span class="stat-num">100%</span><span class="stat-label">Air-Gapped</span></div>
-    <div class="stat-box"><span class="stat-num">ISO</span><span class="stat-label">42001 Mapped</span></div>
+    <div class="stat-box"><span class="stat-num">ISO</span><span class="stat-label">27001 & 42001 Mapped</span></div>
     <div class="stat-box"><span class="stat-num">EU</span><span class="stat-label">AI Act Ready</span></div>
   </div>
 </div>
@@ -194,6 +194,9 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
       Your browser can't play this video. <a href="Copilot_scan_.mp4">Download the demo</a>.
     </video>
   </div>
+  <p class="video-disclaimer">
+    <strong>Disclaimer:</strong> This video is for educational and demonstration purposes only. It showcases Neural Sentinel’s automated detection capabilities on publicly available, open-source repositories. This does not constitute an official security audit, nor does it imply any affiliation, sponsorship, or endorsement by Microsoft or any other third-party organization.
+  </p>
 </section>
 
 <hr class="full-divider">
@@ -216,7 +219,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="output-row">
       <div class="output-file">_audit_matrix.md</div>
       <div class="output-for">Auditors</div>
-      <div class="output-desc">Direct control mapping to ISO/IEC 42001 and EU AI Act.</div>
+      <div class="output-desc">Direct control mapping to ISO/IEC 27001:2022, ISO/IEC 42001, and EU AI Act.</div>
     </div>
     <div class="output-row">
       <div class="output-file">_merged.json</div>
@@ -229,7 +232,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
       <div class="output-desc">The AI tool schemas extracted during the scan.</div>
     </div>
   </div>
-  <p class="output-note">All five files are written inside your own environment. <code>_manifest.json</code> never leaves it.</p>
+  <p class="output-note">All five files are written inside your own environment. <code>_manifest.json</code> never leaves it.<br><em style="color:var(--dim)">Note: Neural Sentinel automates technical evidence gathering for specific controls. It supports, but does not replace, a formal certification audit.</em></p>
 </section>
 
 <hr class="full-divider">
@@ -252,7 +255,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="feat-card">
       <div class="feat-icon">⚖️</div>
       <h3>Automated GRC Mapping</h3>
-      <p>Automatically translates technical vulnerabilities into ISO/IEC 42001 Annex A and EU AI Act Article compliance evidence, ready for direct API ingestion into major GRC platforms.</p>
+      <p>Automatically translates AI-specific technical vulnerabilities into evidence mapped to critical ISO/IEC 27001:2022 (e.g., A.8.8, A.8.12) and ISO/IEC 42001 controls, ready for direct API ingestion into major GRC platforms.</p>
     </div>
   </div>
 </section>
@@ -365,7 +368,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <h2 class="section-title">Common questions</h2>
   <div class="faq-list">
     <div class="faq-item"><h3>Does Neural Sentinel send our code or prompts to the cloud?</h3><p>Absolutely not. Our core differentiator is the Enterprise Docker Appliance, which is 100% air-gapped. It runs local inference within the client's own VPC or on-premise infrastructure. Zero data ever leaves your environment.</p></div>
-    <div class="faq-item"><h3>How is this different from standard SAST tools?</h3><p>Standard SAST looks for generic code flaws. Neural Sentinel is purpose-built for AI architectures, detecting AI-native combinatorial kill-chains (CWE-269), prompt injection vectors, and mapping them directly to legal compliance frameworks (EU AI Act, ISO 42001) that auditors require.</p></div>
+    <div class="faq-item"><h3>How is this different from standard SAST tools?</h3><p>Standard SAST looks for generic code flaws. Neural Sentinel is purpose-built for AI architectures, detecting AI-native combinatorial kill-chains, prompt injection vectors, and mapping them directly to technical controls in frameworks like the EU AI Act, ISO/IEC 27001, and ISO/IEC 42001 that auditors require.</p></div>
     <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br> Step 2: Once validated, we discuss Founding Partner pricing ($990/yr), VAR bundles ($7,500), or technical integration.</p></div>
   </div>
 </section>
