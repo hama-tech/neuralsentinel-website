@@ -59,7 +59,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .stat-box{background:var(--surface);padding:1.5rem;text-align:center}
 .stat-num{font-size:2rem;font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:.2rem}
 .stat-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem 1.75rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .price-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-3px)}
 .price-card.featured{border-color:var(--accent);background:linear-gradient(145deg,rgba(99,102,241,.08),var(--surface));box-shadow:0 0 40px rgba(99,102,241,.12)}
@@ -266,47 +266,70 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <section class="section" id="partners">
   <div class="section-label">// pricing & partners</div>
   <h2 class="section-title">Scale Your AI Compliance Offerings</h2>
-  <p class="section-sub">We do not compete with your services; we make them highly scalable and more profitable.</p>
+  <p class="section-sub">We do not compete with your services; we make them highly scalable and more profitable. Choose the tier that matches your business model.</p>
+  
   <div class="pricing-grid">
+    <!-- TIER 1: END-USER ENTRY -->
     <div class="price-card">
       <div class="price-tier">Founding Partner</div>
       <div class="price-amount">$1,490</div>
-      <div class="price-period">/ year</div>
+      <div class="price-period">/ year (Limited availability)</div>
       <ul class="price-features">
-        <li>1-Year Commercial License</li>
+        <li>For early adopters & single dev teams</li>
         <li>Unlimited air-gapped scans</li>
         <li>5-file output per scan + SARIF export</li>
         <li>Direct founder support & onboarding</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="founding">Request 35-Day NFR Evaluation →</a>
     </div>
-    <div class="price-card featured">
+
+    <!-- TIER 2: END-USER STANDARD -->
+    <div class="price-card">
       <div class="price-tier">Enterprise</div>
       <div class="price-amount">$4,900</div>
       <div class="price-period">/ year</div>
       <ul class="price-features">
-        <li>Unlimited repositories & VPCs</li>
-        <li>✅ INCLUDES: GRC Automation Add-on</li>
-        <li>Automated HMAC-signed webhook delivery to Vanta/Drata/Jira</li>
+        <li>For mid-market tech & internal security teams</li>
+        <li>Unlimited repositories & VPC deployments</li>
         <li>Priority email support & container updates</li>
+        <li><em>+ Add GRC Webhook Automation for $2,000/yr</em></li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="enterprise">Contact Sales →</a>
     </div>
+
+    <!-- TIER 3: PARTNER / RESELLER (FEATURED) -->
+    <div class="price-card featured">
+      <div class="price-tier">Agency White-Label ⭐</div>
+      <div class="price-amount">$7,500</div>
+      <div class="price-period">/ year</div>
+      <ul class="price-features">
+        <li><strong>For consultants & MSSPs monetizing compliance</strong></li>
+        <li>Dynamic PDF report branding (Your Agency Logo)</li>
+        <li>1 Dedicated client engagement license key</li>
+        <li>✅ INCLUDES: Automated GRC Webhook Delivery</li>
+        <li>Commercial resale rights for audit services</li>
+      </ul>
+      <a href="#contact" class="price-btn" data-interest="agency">Become a Partner →</a>
+    </div>
+
+    <!-- TIER 4: HIGH-VOLUME RESELLER -->
     <div class="price-card">
       <div class="price-tier">VAR / MSSP 5-Pack</div>
       <div class="price-amount">$19,500</div>
       <div class="price-period">/ year</div>
       <ul class="price-features">
-        <li>5x Distinct White-Label Licenses</li>
-        <li>Commercial redistribution rights</li>
-        <li>Dynamic PDF report branding for your agency</li>
+        <li>For established firms managing multiple clients</li>
+        <li>5x Distinct White-Label License Keys</li>
         <li>Multi-tenant GRC Webhook Routing</li>
+        <li>Bulk cryptographic key generation dashboard</li>
+        <li>Full commercial redistribution rights</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="var">Contact Sales →</a>
     </div>
   </div>
+
   <div class="enterprise-note">
-    💼 <strong>Ready to validate?</strong> We provide <strong>35-day</strong> Not-For-Resale (NFR) evaluation keys for internal lab testing and technical validation.<br>
+    💼 <strong>Not sure which tier is right?</strong> We provide <strong>35-day</strong> Not-For-Resale (NFR) evaluation keys for internal lab testing and technical validation, no strings attached.<br>
     <a href="#contact" data-interest="nfr">Request 35-Day Access →</a>
   </div>
 </section>
@@ -338,10 +361,12 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="form-group">
       <label class="form-label" for="interest">I'm interested in</label>
       <select class="form-select" id="interest" name="interest">
-        <option value="nfr">35-Day NFR Evaluation (Founding Partner)</option>
-        <option value="enterprise">Enterprise License ($4,900/yr, includes GRC Webhook)</option>
+        <option value="nfr">35-Day NFR Evaluation (Free Technical Validation)</option>
+        <option value="founding">Founding Partner License ($1,490/yr)</option>
+        <option value="enterprise">Enterprise License ($4,900/yr)</option>
+        <option value="enterprise_grc">Enterprise + GRC Webhook Automation ($6,900/yr)</option>
+        <option value="agency">Agency White-Label License ($7,500/yr)</option>
         <option value="var">VAR / MSSP 5-Pack Bundle ($19,500/yr)</option>
-        <option value="agency">Agency White-Label ($7,500/yr)</option>
       </select>
     </div>
 
