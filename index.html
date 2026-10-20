@@ -59,7 +59,7 @@ h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--ac
 .stat-box{background:var(--surface);padding:1.5rem;text-align:center}
 .stat-num{font-size:2rem;font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:.2rem}
 .stat-label{font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem 1.75rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .price-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-3px)}
 .price-card.featured{border-color:var(--accent);background:linear-gradient(145deg,rgba(99,102,241,.08),var(--surface));box-shadow:0 0 40px rgba(99,102,241,.12)}
@@ -137,9 +137,9 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <li><a href="#solution">Solution</a></li>
     <li><a href="#demo">Demo</a></li>
     <li><a href="#output">Output</a></li>
-    <li><a href="#partners">Partners</a></li>
+    <li><a href="#partners">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact" class="nav-cta">Contact →</a></li>
+    <li><a href="#contact" class="nav-cta">Request Access →</a></li>
   </ul>
 </nav>
 
@@ -148,7 +148,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <div class="hero-content">
     <div class="hero-badge">AUTOMATED AI TRiSM & COMPLIANCE</div>
     <h1>Secure the <em>Sovereign AI</em><br>Frontier</h1>
-    <p class="hero-sub">Continuous, air-gapped security scanning and automated technical evidence mapping for ISO/IEC 27001, ISO/IEC 42001 & the EU AI Act.</p>
+    <p class="hero-sub">Continuous, 100% air-gapped security scanning and automated technical evidence mapping for ISO/IEC 27001, ISO/IEC 42001 & the EU AI Act.</p>
     <div class="hero-actions">
       <a href="https://github.com/hama-tech/hama-tech-neural-sentinel-action" target="_blank" rel="noopener" class="btn-primary">View GitHub Action →</a>
       <a href="#contact" class="btn-secondary">Request 35-Day Evaluation</a>
@@ -159,7 +159,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
         <span class="terminal-title">github actions — neural-sentinel-scan.yml</span>
       </div>
       <div class="terminal-body">
-        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">Running Neural Sentinel v1.8...</span></div>
+        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">Running Neural Sentinel v2.0...</span></div>
+        <div class="t-line"><span class="t-out-ok">  ✅ Valid ENTERPRISE license verified cryptographically.</span></div>
         <div class="t-line"><span class="t-out-dim">→ Scanning agent configuration for structural vulnerabilities...</span></div>
         <div class="t-line"><span class="t-out-err">  [HIGH] CWE-269 — Unconstrained parameter detected in 'execute_tool' schema</span></div>
         <div class="t-line"><span class="t-out-dim">→ Mapping to ISO/IEC 27001 A.8.12 & ISO 42001 A.7.2...</span></div>
@@ -175,7 +176,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 
 <div class="section" style="padding-bottom:2rem">
   <div class="stats-row">
-    <div class="stat-box"><span class="stat-num">&lt;15s</span><span class="stat-label">Scan Time</span></div>
+    <div class="stat-box"><span class="stat-num">&lt;60s</span><span class="stat-label">Scan Time</span></div>
     <div class="stat-box"><span class="stat-num">100%</span><span class="stat-label">Air-Gapped</span></div>
     <div class="stat-box"><span class="stat-num">ISO</span><span class="stat-label">27001 & 42001 Mapped</span></div>
     <div class="stat-box"><span class="stat-num">EU</span><span class="stat-label">AI Act Ready</span></div>
@@ -187,7 +188,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <section class="video-section" id="demo">
   <div class="section-label">// live demo</div>
   <h2 class="section-title">See a Scan from Start to Finish</h2>
-  <p class="section-sub" style="margin:0 auto">Watch Neural Sentinel scan an AI agent configuration and map each finding to compliance evidence.</p>
+  <p class="section-sub" style="margin:0 auto">Watch Neural Sentinel scan an AI agent configuration, enforce cryptographic licensing, and map each finding to compliance evidence.</p>
   <div class="video-container">
     <video controls playsinline preload="metadata" aria-label="Neural Sentinel scan walkthrough">
       <source src="Copilot_scan_.mp4" type="video/mp4">
@@ -209,12 +210,12 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="output-row">
       <div class="output-file">_FINAL.pdf</div>
       <div class="output-for">CISOs &amp; Boards</div>
-      <div class="output-desc">Executive summary of risk and compliance posture.</div>
+      <div class="output-desc">Executive summary of risk and compliance posture (Dynamic White-Label available).</div>
     </div>
     <div class="output-row">
       <div class="output-file">_report.md</div>
       <div class="output-for">Developers</div>
-      <div class="output-desc">Actionable remediation steps for each finding.</div>
+      <div class="output-desc">Actionable remediation steps and exact line numbers for each finding.</div>
     </div>
     <div class="output-row">
       <div class="output-file">_audit_matrix.md</div>
@@ -229,7 +230,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="output-row">
       <div class="output-file">_manifest.json</div>
       <div class="output-for">Proof of work</div>
-      <div class="output-desc">The AI tool schemas extracted during the scan.</div>
+      <div class="output-desc">The AI tool schemas extracted during the scan. Never leaves your environment.</div>
     </div>
   </div>
   <p class="output-note">All five files are written inside your own environment. <code>_manifest.json</code> never leaves it.<br><em style="color:var(--dim)">Note: Neural Sentinel automates technical evidence gathering for specific controls. It supports, but does not replace, a formal certification audit.</em></p>
@@ -238,19 +239,19 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <hr class="full-divider">
 
 <section class="section" id="solution">
-  <div class="section-label">// two-tiered architecture</div>
+  <div class="section-label">// architecture</div>
   <h2 class="section-title">Built for Developers.<br>Trusted by Auditors.</h2>
   <p class="section-sub">We replace manual AI audits with continuous, automated evidence collection, without compromising data privacy.</p>
   <div class="features-grid">
     <div class="feat-card">
       <div class="feat-icon">⚡</div>
       <h3>Developer GitHub Action</h3>
-      <p>A lightweight, shift-left SAST tool that catches structural AI vulnerabilities (e.g., unconstrained parameters, prompt injection risks) in under 15 seconds per PR. Free for open-source.</p>
+      <p>A lightweight, shift-left SAST tool that catches structural AI vulnerabilities (e.g., unconstrained parameters, prompt injection risks) and blocks PRs automatically. Free for open-source.</p>
     </div>
     <div class="feat-card">
-      <div class="feat-icon">🏢</div>
+      <div class="feat-icon">🔒</div>
       <h3>Enterprise Docker Appliance</h3>
-      <p>A self-hosted, air-gapped container that performs deep semantic scanning of AI agents. Generates structured JSON compliance matrices and auditor-ready PDF reports. Includes optional HMAC-signed GRC Webhooks to auto-push evidence to Vanta, Drata, or Jira. Zero data leaves the client's VPC.</p>
+      <p>A self-hosted, air-gapped container that performs deep semantic scanning of AI agents. Generates structured JSON compliance matrices and auditor-ready PDF reports. Zero data leaves the client's VPC.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">⚖️</div>
@@ -263,44 +264,43 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <hr class="full-divider">
 
 <section class="section" id="partners">
-  <div class="section-label">// partner program</div>
+  <div class="section-label">// pricing & partners</div>
   <h2 class="section-title">Scale Your AI Compliance Offerings</h2>
   <p class="section-sub">We do not compete with your services; we make them highly scalable and more profitable.</p>
   <div class="pricing-grid">
     <div class="price-card">
       <div class="price-tier">Founding Partner</div>
-      <div class="price-amount">$1,000</div>
-      <div class="price-period">/ year (Limited to first 5)</div>
+      <div class="price-amount">$1,490</div>
+      <div class="price-period">/ year</div>
       <ul class="price-features">
         <li>1-Year Commercial License</li>
         <li>Unlimited air-gapped scans</li>
-        <li>5-file output per scan</li>
+        <li>5-file output per scan + SARIF export</li>
         <li>Direct founder support & onboarding</li>
-        <li>GRC Webhook Add-on available (+$500/yr)</li>
       </ul>
-      <a href="#contact" class="price-btn" data-interest="nfr">Request 35-Day NFR Evaluation →</a>
+      <a href="#contact" class="price-btn" data-interest="founding">Request 35-Day NFR Evaluation →</a>
     </div>
     <div class="price-card featured">
-      <div class="price-tier">Enterprise License</div>
-      <div class="price-amount">$2,500</div>
+      <div class="price-tier">Enterprise</div>
+      <div class="price-amount">$4,900</div>
       <div class="price-period">/ year</div>
       <ul class="price-features">
         <li>Unlimited repositories & VPCs</li>
         <li>✅ INCLUDES: GRC Automation Add-on</li>
-        <li>Automated HMAC-signed webhook delivery to Vanta/Drata</li>
+        <li>Automated HMAC-signed webhook delivery to Vanta/Drata/Jira</li>
         <li>Priority email support & container updates</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="enterprise">Contact Sales →</a>
     </div>
     <div class="price-card">
       <div class="price-tier">VAR / MSSP 5-Pack</div>
-      <div class="price-amount">$7,500</div>
+      <div class="price-amount">$19,500</div>
       <div class="price-period">/ year</div>
       <ul class="price-features">
-        <li>5x Enterprise Licenses</li>
+        <li>5x Distinct White-Label Licenses</li>
         <li>Commercial redistribution rights</li>
-        <li>✅ INCLUDES: Multi-tenant GRC Webhook Routing</li>
-        <li>Bulk cryptographic license key generation</li>
+        <li>Dynamic PDF report branding for your agency</li>
+        <li>Multi-tenant GRC Webhook Routing</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="var">Contact Sales →</a>
     </div>
@@ -327,7 +327,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="form-group">
       <label class="form-label" for="workEmail">Work email *</label>
       <input class="form-input" type="email" id="workEmail" name="workEmail" autocomplete="email" placeholder="name@yourcompany.com" required>
-      <p class="form-note">Use your company email address, not a personal one (gmail.com, yahoo.com)</p>
+      <p class="form-note">Use your company email address, not a personal one (gmail.com, yahoo.com, etc.)</p>
     </div>
 
     <div class="form-group">
@@ -339,16 +339,15 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
       <label class="form-label" for="interest">I'm interested in</label>
       <select class="form-select" id="interest" name="interest">
         <option value="nfr">35-Day NFR Evaluation (Founding Partner)</option>
-        <option value="enterprise">Enterprise License ($2,500/yr, includes GRC Webhook)</option>
-        <option value="var">VAR / MSSP 5-Pack Bundle ($7,500/yr)</option>
-        <option value="grc_addon">GRC Automation Add-on (+$500/yr)</option>
-        <option value="integration">GRC Platform Integration</option>
+        <option value="enterprise">Enterprise License ($4,900/yr, includes GRC Webhook)</option>
+        <option value="var">VAR / MSSP 5-Pack Bundle ($19,500/yr)</option>
+        <option value="agency">Agency White-Label ($7,500/yr)</option>
       </select>
     </div>
 
     <div class="form-group">
       <label class="form-label" for="message">What AI systems do you want to scan?</label>
-      <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your AI infrastructure (RAG pipelines, agent workflows, etc.) and which compliance frameworks you need to map to..."></textarea>
+      <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your AI infrastructure (RAG pipelines, agent workflows, MCP servers) and which compliance frameworks you need to map to..."></textarea>
     </div>
 
     <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
@@ -369,10 +368,10 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <div class="section-label">// faq</div>
   <h2 class="section-title">Common questions</h2>
   <div class="faq-list">
-    <div class="faq-item"><h3>Does Neural Sentinel send our code or prompts to the cloud?</h3><p>Absolutely not. Our core differentiator is the Enterprise Docker Appliance, which is 100% air-gapped. It runs local inference within the client's own VPC or on-premise infrastructure. Zero data ever leaves your environment.</p></div>
-    <div class="faq-item"><h3>How is this different from standard SAST tools?</h3><p>Standard SAST looks for generic code flaws. Neural Sentinel is purpose-built for AI architectures, detecting AI-native combinatorial kill-chains, prompt injection vectors, and mapping them directly to technical controls in frameworks like the EU AI Act, ISO/IEC 27001, and ISO/IEC 42001 that auditors require.</p></div>
-    <div class="faq-item"><h3>Can Neural Sentinel automatically push findings to our GRC platform (like Vanta or Drata)?</h3><p>Yes. Our Enterprise and VAR tiers include the <strong>GRC Automation Add-on</strong>. This enables a secure, HMAC-SHA256 signed webhook that automatically pushes the <code>_merged.json</code> compliance evidence directly to your GRC platform, SIEM, or ticketing system (like Jira). Because the scanner runs air-gapped, only the sanitized, signed JSON payload is transmitted—your source code and prompts never leave your environment.</p></div>
-    <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br> Step 2: Once validated, we discuss Founding Partner pricing ($1,000/yr), VAR bundles ($7,500), or technical integration.</p></div>
+    <div class="faq-item"><h3>Does Neural Sentinel send our code or prompts to the cloud?</h3><p>Absolutely not. Our core differentiator is the Enterprise Docker Appliance, which is 100% air-gapped. It runs locally within the client's own VPC or on-premise infrastructure. Zero data ever leaves your environment.</p></div>
+    <div class="faq-item"><h3>How is this different from standard SAST tools?</h3><p>Standard SAST looks for generic code flaws. Neural Sentinel is purpose-built for AI architectures, detecting AI-native combinatorial kill-chains, prompt injection vectors, and mapping them directly to technical controls in frameworks like the EU AI Act, ISO/IEC 27001, and ISO/IEC 42001.</p></div>
+    <div class="faq-item"><h3>Can Neural Sentinel automatically push findings to our GRC platform?</h3><p>Yes. Our Enterprise and VAR tiers include automated, HMAC-SHA256 signed webhooks that push the <code>_merged.json</code> compliance evidence directly to platforms like Vanta, Drata, or Jira. Only the sanitized, signed JSON payload is transmitted.</p></div>
+    <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br>Step 2: Once validated, we discuss Founding Partner pricing, VAR bundles, or technical integration.</p></div>
   </div>
 </section>
 
@@ -383,7 +382,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
     <div class="footer-brand">
       <div class="nav-logo">🛡️ <span>Neural</span>Sentinel</div>
       <p>Automated AI TRiSM and compliance mapping for the enterprise. Securing the sovereign AI frontier.</p>
-      <p style="margin-top:1rem">📧 engineering@neuralsentinel.online</p>
+      <p style="margin-top:1rem">📧 mohamed@neuralsentinel.online</p>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
@@ -408,7 +407,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <div class="modal-overlay" id="modal-terms" onclick="closeModal('terms')" style="display:none;position:fixed;inset:0;background:rgba(5,8,16,.9);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px)">
   <div class="modal-box" onclick="event.stopPropagation()" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;max-width:560px;width:90%">
     <h2>Terms of Service</h2>
-    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1rem">By using Neural Sentinel, you agree to use the service only for legitimate security testing of systems you own or have explicit permission to test. We provide the service "as is" without warranty.</p>
+    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:1rem">By using Neural Sentinel, you agree to use the service only for legitimate security testing of systems you own or have explicit permission to test. We provide the service "as is" without warranty. Provider utilizes per-script cryptographic license enforcement; any attempt to bypass the container entrypoint will result in immediate execution termination.</p>
     <button class="modal-close" onclick="closeModal('terms')" style="font-family:var(--mono);font-size:.78rem;padding:.6rem 1.5rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer">Close</button>
   </div>
 </div>
