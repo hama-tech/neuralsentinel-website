@@ -266,69 +266,67 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
 <section class="section" id="partners">
   <div class="section-label">// pricing & partners</div>
   <h2 class="section-title">Scale Your AI Compliance Offerings</h2>
-  <p class="section-sub">We do not compete with your services; we make them highly scalable and more profitable. Choose the tier that matches your business model.</p>
+  <p class="section-sub">We do not compete with your services; we empower them. Our transparent "Platform + Client Block" model ensures you only pay for the value you extract, with unlimited air-gapped scans included.</p>
   
   <div class="pricing-grid">
-    <!-- TIER 1: END-USER ENTRY -->
+    <!-- TIER 1: SOLO / INTERNAL -->
     <div class="price-card">
-      <div class="price-tier">Founding Partner</div>
+      <div class="price-tier">Solo / Internal</div>
       <div class="price-amount">$1,490</div>
-      <div class="price-period">/ year (Limited availability)</div>
+      <div class="price-period">/ year</div>
       <ul class="price-features">
-        <li>For early adopters & single dev teams</li>
-        <li>Unlimited air-gapped scans</li>
+        <li>For internal security teams & solo consultants</li>
+        <li>Unlimited air-gapped scans for internal use only</li>
         <li>5-file output per scan + SARIF export</li>
         <li>Direct founder support & onboarding</li>
+        <li>Standard Neural Sentinel branding on reports</li>
       </ul>
-      <a href="#contact" class="price-btn" data-interest="founding">Request 35-Day NFR Evaluation →</a>
+      <a href="#contact" class="price-btn" data-interest="solo">Request 35-Day NFR Evaluation →</a>
     </div>
 
-    <!-- TIER 2: END-USER STANDARD -->
-    <div class="price-card">
-      <div class="price-tier">Enterprise</div>
+    <!-- TIER 2: BOUTIQUE AGENCY (FEATURED) -->
+    <div class="price-card featured">
+      <div class="price-tier">Boutique Agency ⭐</div>
       <div class="price-amount">$4,900</div>
       <div class="price-period">/ year</div>
       <ul class="price-features">
-        <li>For mid-market tech & internal security teams</li>
-        <li>Unlimited repositories & VPC deployments</li>
-        <li>Priority email support & container updates</li>
-        <li><em>+ Add GRC Webhook Automation for $2,000/yr</em></li>
-      </ul>
-      <a href="#contact" class="price-btn" data-interest="enterprise">Contact Sales →</a>
-    </div>
-
-    <!-- TIER 3: PARTNER / RESELLER (FEATURED) -->
-    <div class="price-card featured">
-      <div class="price-tier">Agency White-Label ⭐</div>
-      <div class="price-amount">$7,500</div>
-      <div class="price-period">/ year</div>
-      <ul class="price-features">
         <li><strong>For consultants & MSSPs monetizing compliance</strong></li>
-        <li>Dynamic PDF report branding (Your Agency Logo)</li>
-        <li>1 Dedicated client engagement license key</li>
-        <li>✅ INCLUDES: Automated GRC Webhook Delivery</li>
+        <li>Includes the White-Label Engine + GRC Webhook Automation</li>
+        <li>Includes up to 3 Registered End-Clients</li>
+        <li>Unlimited scans per registered client</li>
+        <li>Dynamic PDF branding (Your Agency Logo)</li>
         <li>Commercial resale rights for audit services</li>
+        <li>+ $2,500/year per additional registered client</li>
       </ul>
       <a href="#contact" class="price-btn" data-interest="agency">Become a Partner →</a>
     </div>
 
-    <!-- TIER 4: HIGH-VOLUME RESELLER -->
+    <!-- TIER 3: ENTERPRISE MSSP -->
     <div class="price-card">
-      <div class="price-tier">VAR / MSSP 5-Pack</div>
-      <div class="price-amount">$19,500</div>
+      <div class="price-tier">Enterprise MSSP</div>
+      <div class="price-amount">$14,900</div>
       <div class="price-period">/ year</div>
       <ul class="price-features">
-        <li>For established firms managing multiple clients</li>
-        <li>5x Distinct White-Label License Keys</li>
-        <li>Multi-tenant GRC Webhook Routing</li>
+        <li>For established firms managing large portfolios</li>
+        <li>Includes up to 15 Registered End-Clients</li>
+        <li>Multi-tenant GRC Webhook Routing (Vanta, Drata, etc.)</li>
         <li>Bulk cryptographic key generation dashboard</li>
-        <li>Full commercial redistribution rights</li>
+        <li>Priority SLA & dedicated technical account manager</li>
+        <li>+ $1,500/year per additional registered client (Volume Discount)</li>
       </ul>
-      <a href="#contact" class="price-btn" data-interest="var">Contact Sales →</a>
+      <a href="#contact" class="price-btn" data-interest="enterprise_mssp">Contact Sales →</a>
     </div>
   </div>
 
   <div class="enterprise-note">
+    💼 <strong>Need Board-Level Technical Validation?</strong><br>
+    For high-stakes enterprise or government submissions, partners can add a Neural Sentinel Technical Validation Review to their engagement:<br>
+    • <strong>Automated Technical Readiness Report ($5,000 / engagement):</strong> A premium, vendor-signed summary of the scan results, explicitly mapped to ISO/IEC 42001 and EU AI Act controls.<br>
+    • <strong>Expert-Led Architecture Review ($15,000 / engagement):</strong> Includes the Readiness Report plus a 1-hour technical walkthrough with a Neural Sentinel security engineer to defend the findings and answer auditor questions.<br>
+    <em style="color:var(--dim)">*Note: These services provide technical readiness validation and do not replace formal certification by an accredited third-party auditing body.</em>
+  </div>
+
+  <div class="enterprise-note" style="margin-top: 1rem; border-style: solid;">
     💼 <strong>Not sure which tier is right?</strong> We provide <strong>35-day</strong> Not-For-Resale (NFR) evaluation keys for internal lab testing and technical validation, no strings attached.<br>
     <a href="#contact" data-interest="nfr">Request 35-Day Access →</a>
   </div>
@@ -362,11 +360,11 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
       <label class="form-label" for="interest">I'm interested in</label>
       <select class="form-select" id="interest" name="interest">
         <option value="nfr">35-Day NFR Evaluation (Free Technical Validation)</option>
-        <option value="founding">Founding Partner License ($1,490/yr)</option>
-        <option value="enterprise">Enterprise License ($4,900/yr)</option>
-        <option value="enterprise_grc">Enterprise + GRC Webhook Automation ($6,900/yr)</option>
-        <option value="agency">Agency White-Label License ($7,500/yr)</option>
-        <option value="var">VAR / MSSP 5-Pack Bundle ($19,500/yr)</option>
+        <option value="solo">Solo / Internal License ($1,490/yr)</option>
+        <option value="agency">Boutique Agency License ($4,900/yr)</option>
+        <option value="enterprise_mssp">Enterprise MSSP License ($14,900/yr)</option>
+        <option value="validation_5k">Automated Technical Readiness Report ($5,000/engagement)</option>
+        <option value="validation_15k">Expert-Led Architecture Review ($15,000/engagement)</option>
       </select>
     </div>
 
@@ -395,8 +393,9 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;max-width:1100p
   <div class="faq-list">
     <div class="faq-item"><h3>Does Neural Sentinel send our code or prompts to the cloud?</h3><p>Absolutely not. Our core differentiator is the Enterprise Docker Appliance, which is 100% air-gapped. It runs locally within the client's own VPC or on-premise infrastructure. Zero data ever leaves your environment.</p></div>
     <div class="faq-item"><h3>How is this different from standard SAST tools?</h3><p>Standard SAST looks for generic code flaws. Neural Sentinel is purpose-built for AI architectures, detecting AI-native combinatorial kill-chains, prompt injection vectors, and mapping them directly to technical controls in frameworks like the EU AI Act, ISO/IEC 27001, and ISO/IEC 42001.</p></div>
-    <div class="faq-item"><h3>Can Neural Sentinel automatically push findings to our GRC platform?</h3><p>Yes. Our Enterprise and VAR tiers include automated, HMAC-SHA256 signed webhooks that push the <code>_merged.json</code> compliance evidence directly to platforms like Vanta, Drata, or Jira. Only the sanitized, signed JSON payload is transmitted.</p></div>
-    <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br>Step 2: Once validated, we discuss Founding Partner pricing, VAR bundles, or technical integration.</p></div>
+    <div class="faq-item"><h3>Can Neural Sentinel automatically push findings to our GRC platform?</h3><p>Yes. Our Boutique Agency and Enterprise MSSP tiers include automated, HMAC-SHA256 signed webhooks that push the <code>_merged.json</code> compliance evidence directly to platforms like Vanta, Drata, or Jira. Only the sanitized, signed JSON payload is transmitted.</p></div>
+    <div class="faq-item"><h3>How does your partnership licensing work?</h3><p>We use a transparent "Platform + Client Block" model. You purchase a base tier (e.g., Boutique Agency at $4,900/yr) which includes the white-label engine and your first 3 Registered End-Clients. As you win new business, you simply add clients at $2,500/year each. We conduct an annual usage reconciliation to ensure partners are properly licensed for their scale.</p></div>
+    <div class="faq-item"><h3>How do we start a partnership or evaluation?</h3><p>Step 1: Contact us using your work email to receive a <strong>35-day NFR (Not-For-Resale) evaluation key</strong>. This gives your technical team full access to validate the Docker appliance in your lab.<br>Step 2: Once validated, we discuss the best fit for your volume, whether that’s our Boutique Agency tier or our Enterprise MSSP tier, and get your first Registered End-Clients set up.</p></div>
   </div>
 </section>
 
